@@ -1,0 +1,350 @@
+/* Import fonts: Poppins for general text and Montserrat for header */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fff3e0; /* Soft, warm cream */
+}
+
+/* Main App Container with default warm gradient */
+.App {
+  text-align: center;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: background 0.5s ease;
+  background: linear-gradient(
+    135deg,
+    #fff3e0,
+    #ffcc80
+  ); /* Default warm gradient */
+}
+
+/* Dynamic Background Classes with warmer, pastel colors */
+.App.clear {
+  background: linear-gradient(135deg, #ffe0b2, #ffcc80);
+}
+
+.App.rainy {
+  background: linear-gradient(135deg, #ffccbc, #ffab91);
+}
+
+.App.cloudy {
+  background: linear-gradient(135deg, #ffecb3, #ffe082);
+}
+
+.App.sunny {
+  background: linear-gradient(135deg, #fff9c4, #fff59d);
+}
+
+.App.snowy {
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+}
+
+/* Header Styles */
+.app-header {
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-family: "Montserrat", sans-serif; /* Header font */
+  color: #5d4037; /* Dark brown */
+}
+
+.app-header p {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+/* Main Content Styles */
+.content {
+  padding: 20px 0;
+}
+
+/* Loading Styles */
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Button Styles */
+.button {
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+  background-color: #fff3e0;
+  transform: translateY(-2px);
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Primary buttons: used for Yes, No, and "Not in the mood?" actions */
+.button.primary {
+  padding: 12px 24px;
+  margin: 10px;
+  background-color: #ff6f43f2; /* Warm soft coral */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button.primary:hover {
+  background-color: #ff6f43f2; /* Slightly more saturated, but softer than intense orange */
+  transform: translateY(-2px);
+}
+
+/* Secondary buttons: used for View Details, Add/Delete Favorite, etc. */
+.button.secondary {
+  padding: 12px 24px;
+  margin: 10px;
+  background-color: #fff3e0; /* Warm cream, matching ingredient filter background */
+  color: #5d4037; /* Dark brown */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button.secondary:hover {
+  background-color: #ff6f43f2; /* Transition to primary normal color on hover */
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Auth Buttons - styled as clickable text using header font */
+.auth-button {
+  background: none;
+  border: none;
+  color: #5d4037; /* same dark brown as header */
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-size: 1rem;
+  padding: 0;
+  transition: transform 0.2s ease;
+}
+
+.auth-button:hover {
+  background: none; /* no background change on hover */
+  transform: translateY(-2px);
+}
+
+/* Refresh Button Styles */
+.refresh-button {
+  margin-left: 10px;
+  padding: 6px 10px;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #ff7043;
+  transition: color 0.3s ease;
+}
+
+.refresh-button:hover {
+  color: #f4511e;
+}
+
+/* Select Dropdown Styles */
+.select {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  transition: border-color 0.3s ease;
+}
+
+.select:focus {
+  border-color: #ff7043;
+  outline: none;
+}
+
+/* Error Message Styles */
+.error {
+  color: #d32f2f;
+  text-align: center;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+/* Recipe Cards */
+.recipes {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.recipeCard {
+  background-color: #ffffffee;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 400px;
+}
+
+.recipeCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Recipe Title */
+.recipeCard h3 {
+  font-size: 1.4rem;
+  color: #333333f3;
+  margin: 15px 10px 10px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2; /* Standard property for compatibility */
+  min-height: 48px;
+}
+
+.recipeImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.recipeSnippet {
+  font-size: 1rem;
+  color: #444;
+  margin: 15px 10px;
+  text-align: left;
+  min-height: 50px;
+}
+
+/* Modal Overlay Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #666;
+}
+
+.modal-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* Recipe Details within Modal */
+.recipeDetails {
+  text-align: left;
+}
+
+.ingredientsList {
+  list-style: disc;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+/* Footer Styles */
+.app-footer {
+  margin-top: 40px;
+  padding: 20px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Ingredient Filter Section */
+.ingredient-filter {
+  margin: 20px 0;
+  padding: 10px;
+  background-color: #fff8e1;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ingredient-filter h2 {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  color: #5d4037;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  background: #fff;
+  padding: 5px 8px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
